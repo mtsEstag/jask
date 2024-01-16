@@ -23,4 +23,12 @@ public class TaskService {
     public List<Task> findAll(){        
         return taskRepository.findAll();
     }
+
+    public Task findById(Long id){
+        return taskRepository.findById(id).orElse(null);
+    }
+
+    public void deleteById(Long id){
+        taskRepository.deleteById(id);
+    }
 }
